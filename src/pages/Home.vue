@@ -1,7 +1,8 @@
 <template>
-  <div>test</div>
+  <particles></particles>
 </template>
 <script>
+import Particles from '@/components/Particles'
 export default {
   name: 'Home',
   props: {},
@@ -10,7 +11,9 @@ export default {
   },
   computed: {},
   methods: {},
-  components: {}
+  components: {
+    'particles': Particles
+  }
 }
 </script>
 <style lang="stylus">

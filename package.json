@@ -13,6 +13,7 @@
   "dependencies": {
     "accounting": "^0.4.1",
     "firebase": "^4.6.0",
+    "particles.js": "^2.0.0",
     "vue": "^2.5.2",
     "vue-router": "^3.0.1",
     "vuefire": "^1.4.4",

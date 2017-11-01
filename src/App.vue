@@ -12,22 +12,26 @@
         </v-list-tile>
       </v-list>
     </v-navigation-drawer>
-    <v-toolbar fixed app>
+    <v-toolbar fixed app absolute>
       <v-toolbar-side-icon @click.stop="drawer = !drawer"></v-toolbar-side-icon>
       <v-toolbar-title v-text="title"></v-toolbar-title>
       <v-spacer></v-spacer>
     </v-toolbar>
     <main>
       <v-content>
-        <v-container fluid>
-          <v-slide-y-transition mode="out-in">
-            <router-view></router-view>
-          </v-slide-y-transition>
-        </v-container>
+        <v-slide-y-transition mode="out-in">
+          <router-view></router-view>
+        </v-slide-y-transition>
       </v-content>
     </main>
-    <v-footer>
-      <span>&copy; 2017</span>
+    <v-footer app class="pr-3" color="transparent">
+      <v-subheader>&copy; 2017 {{title}}. All rights reserved.</v-subheader>
+      <v-spacer></v-spacer>
+        <template v-for="s in social">
+          <v-btn small light flat icon :key="s.icon" :href="s.link" target="_blank">
+            <v-icon>{{s.icon}}</v-icon>
+          </v-btn>
+        </template>
     </v-footer>
   </v-app>
 </template>
@@ -42,7 +46,21 @@
           title: 'Inspire',
           route: 'Home'
         }],
-        title: 'G'
+        title: '',
+        social: [
+          {
+            icon: 'fa-twitter',
+            link: 'https://twitter.com/'
+          },
+          {
+            icon: 'fa-linkedin',
+            link: 'https://linkedin.com/'
+          },
+          {
+            icon: 'fa-github',
+            link: 'https://github.com/'
+          }
+        ]
       }
     }
   }

@@ -1,8 +1,8 @@
 <template>
-  <particles></particles>
+  <intro></intro>
 </template>
 <script>
-import Particles from '@/components/Particles'
+import Intro from './components/Intro'
 export default {
   name: 'Home',
   props: {},
@@ -12,7 +12,7 @@ export default {
   computed: {},
   methods: {},
   components: {
-    'particles': Particles
+    'intro': Intro
   }
 }
 </script>

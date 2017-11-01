@@ -2,7 +2,6 @@
   <div id="particles-js" :style="{backgroundImage: 'url(' + image + ')'}"></div>
 </template>
 <script>
-// import options from './options.json'
 import 'particles.js'
 const particles = window.particlesJS
 export default {
@@ -17,10 +16,6 @@ export default {
       default: ''
     }
   },
-  data () {
-    return {}
-  },
-  computed: {},
   methods: {
     initParticles () {
       console.log(particles)
@@ -29,7 +24,6 @@ export default {
       })
     }
   },
-  components: {},
   mounted () {
     this.initParticles()
   }
@@ -40,7 +34,7 @@ export default {
   #particles-js {
     position: absolute;
     width: 100%;
-    height: calc(100% - 100px);
+    height: 100%;
     background-color: $green.darken-2;
     background-image: url("");
     background-repeat: no-repeat;

@@ -1,11 +1,9 @@
 <template>
-  <div class="home-tech">
-    <h1>Hi</h1>
-  </div>
+  <div></div>
 </template>
 <script>
 export default {
-  name: 'Tech',
+  name: 'About',
   props: {},
   data () {
     return {}
@@ -16,7 +14,5 @@ export default {
 }
 </script>
 <style lang="stylus">
-  .home-tech {
-    // height: 100%;
-  }
+
 </style>

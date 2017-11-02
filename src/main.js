@@ -5,8 +5,8 @@ import './assets/stylus/main.styl'
 
 import App from './App'
 import Globals from './globals'
-import router from './router'
-import store from './store'
+import { store } from './store'
+import { router } from './router'
 import { sync } from 'vuex-router-sync'
 
 sync(store, router)

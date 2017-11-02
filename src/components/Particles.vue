@@ -1,5 +1,5 @@
 <template>
-  <div id="particles-js" :style="{backgroundImage: 'url(' + image + ')'}"></div>
+  <div id="particles-js"></div>
 </template>
 <script>
 import 'particles.js'
@@ -10,15 +10,10 @@ export default {
     options: {
       type: String,
       default: '/static/particles.json'
-    },
-    image: {
-      type: String,
-      default: ''
     }
   },
   methods: {
     initParticles () {
-      console.log(particles)
       particles.load('particles-js', this.options, () => {
         console.log('callback - particles.js config loaded')
       })
@@ -37,11 +32,11 @@ export default {
     right: 0;
     bottom: 0;
     left: 0;
-    background-color: $green.darken-2;
-    background-image: url("");
-    background-repeat: no-repeat;
-    background-size: cover;
-    background-position: 50% 50%;
+    // background-color: $green.darken-2;
+    // background-image: url("");
+    // background-repeat: no-repeat;
+    // background-size: cover;
+    // background-position: 50% 50%;
     z-index: 0;
   }
 </style>

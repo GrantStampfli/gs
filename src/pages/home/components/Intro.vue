@@ -1,10 +1,14 @@
 <template>
-  <div class="home-intro">
-    <h1 class="home-title">{{title}}</h1>
-    <h3 class="home-sub-title">{{subTitle}}</h3>
-    <particles title="Testing"></particles>
-    <v-btn class="go-down" icon dark large><v-icon x-large>keyboard_arrow_down</v-icon></v-btn>
-  </div>
+  <v-card flat class="home-intro">
+    <v-parallax jumbotron :height="height" src="https://images.unsplash.com/photo-1471376719851-24d638731081?auto=format&fit=crop&w=1350&q=60&ixid=dW5zcGxhc2guY29tOzs7Ozs%3D">
+      <particles></particles>
+      <v-layout column align-center justify-center>
+        <h1 class="home-title">{{title}}</h1>
+        <h4 class="home-sub-title">{{subTitle}}</h4>
+      </v-layout>
+      <v-btn class="go-down" icon dark large><v-icon x-large>keyboard_arrow_down</v-icon></v-btn>
+    </v-parallax>
+  </v-card>
 </template>
 <script>
 import Particles from '@/components/Particles'
@@ -13,12 +17,20 @@ export default {
   props: {},
   data () {
     return {
-      title: '',
-      subTitle: ''
+      title: 'Vue.js',
+      subTitle: 'Build your application today!'
     }
   },
-  computed: {},
-  methods: {},
+  computed: {
+    height () {
+      return this.$store.getters.windowSize.y
+    }
+  },
+  methods: {
+    hit (e) {
+      console.log(e)
+    }
+  },
   components: {
     'particles': Particles
   }
@@ -27,11 +39,7 @@ export default {
 <style lang="stylus">
   .home-intro {
     position: relative;
-    height: 100%;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
+    max-height: 100%;
     .home-title,
     .home-sub-title {
       z-index: 1;
@@ -40,9 +48,9 @@ export default {
     }
     .go-down {
       position: absolute;
-      bottom: 10px;
+      bottom: 35px;
       right: 50%;
-      margin-right: -13px;
+      margin: 0 -13px 0 0;
     }
   }
 </style>

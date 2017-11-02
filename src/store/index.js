@@ -7,10 +7,11 @@ import mutations from './mutations'
 
 Vue.use(Vuex)
 
-export default new Vuex.Store({
+export const store = new Vuex.Store({
   state: {
     user: {},
     config: {},
+    windowSize: {},
     preferences: {},
     pageHeaderText: 'Loading...'
   },

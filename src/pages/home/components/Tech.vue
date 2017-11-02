@@ -1,6 +1,22 @@
 <template>
   <div class="home-tech">
     <h1>Hi</h1>
+    <h1>Hi</h1>
+    <h1>Hi</h1>
+    <h1>Hi</h1>
+    <h1>Hi</h1>
+    <h1>Hi</h1>
+    <h1>Hi</h1>
+    <h1>Hi</h1>
+    <h1>Hi</h1>
+    <h1>Hi</h1>
+    <h1>Hi</h1>
+    <h1>Hi</h1>
+    <h1>Hi</h1>
+    <h1>Hi</h1>
+    <h1>Hi</h1>
+    <h1>Hi</h1>
+    <h1>Hi</h1>
   </div>
 </template>
 <script>

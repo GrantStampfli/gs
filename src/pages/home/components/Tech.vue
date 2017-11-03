@@ -1,23 +1,8 @@
 <template>
-  <div class="home-tech">
-    <h1>Hi</h1>
-    <h1>Hi</h1>
-    <h1>Hi</h1>
-    <h1>Hi</h1>
-    <h1>Hi</h1>
-    <h1>Hi</h1>
-    <h1>Hi</h1>
-    <h1>Hi</h1>
-    <h1>Hi</h1>
-    <h1>Hi</h1>
-    <h1>Hi</h1>
-    <h1>Hi</h1>
-    <h1>Hi</h1>
-    <h1>Hi</h1>
-    <h1>Hi</h1>
-    <h1>Hi</h1>
-    <h1>Hi</h1>
-  </div>
+  <v-container>
+    <v-card class="home-tech">
+    </v-card>
+  </v-container>
 </template>
 <script>
 export default {

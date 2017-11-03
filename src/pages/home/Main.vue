@@ -1,12 +1,14 @@
 <template>
-  <v-card flat color="transparent">
+  <v-card flat>
     <intro></intro>
+    <testimonials></testimonials>
     <tech></tech>
   </v-card>
 </template>
 <script>
-import Intro from './components/Intro'
 import Tech from './components/Tech'
+import Intro from './components/Intro'
+import Testimonials from './components/Testimonials'
 export default {
   name: 'Home',
   props: {},
@@ -16,8 +18,9 @@ export default {
   computed: {},
   methods: {},
   components: {
+    'tech': Tech,
     'intro': Intro,
-    'tech': Tech
+    'testimonials': Testimonials
   }
 }
 </script>

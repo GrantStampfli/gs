@@ -1,5 +1,5 @@
 <template>
-  <div id="particles-js"></div>
+  <div :id="id"></div>
 </template>
 <script>
 import 'particles.js'
@@ -10,11 +10,15 @@ export default {
     options: {
       type: String,
       default: '/static/particles.json'
+    },
+    id: {
+      type: String,
+      default: 'particles-js'
     }
   },
   methods: {
     initParticles () {
-      particles.load('particles-js', this.options, () => {
+      particles.load(this.id, this.options, () => {
         console.log('callback - particles.js config loaded')
       })
     }

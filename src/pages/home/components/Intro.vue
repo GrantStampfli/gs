@@ -1,12 +1,12 @@
 <template>
   <v-card flat class="home-intro">
-    <v-parallax jumbotron :height="height" src="https://images.unsplash.com/photo-1471376719851-24d638731081?auto=format&fit=crop&w=1350&q=60&ixid=dW5zcGxhc2guY29tOzs7Ozs%3D">
+    <v-parallax jumbotron :height="height" :src="image">
       <particles></particles>
       <v-layout column align-center justify-center>
         <h1 class="home-title">{{title}}</h1>
         <h4 class="home-sub-title">{{subTitle}}</h4>
       </v-layout>
-      <v-btn class="go-down" icon dark large><v-icon x-large>keyboard_arrow_down</v-icon></v-btn>
+      <v-btn class="go-down" icon dark large v-on:click="scrollDown()"><v-icon x-large>keyboard_arrow_down</v-icon></v-btn>
     </v-parallax>
   </v-card>
 </template>
@@ -18,7 +18,8 @@ export default {
   data () {
     return {
       title: 'Vue.js',
-      subTitle: 'Build your application today!'
+      subTitle: 'Build your application today!',
+      image: 'https://images.unsplash.com/photo-1497675443756-159380ecc770?auto=format&fit=crop&w=1350&q=60&ixid=dW5zcGxhc2guY29tOzs7Ozs%3D'
     }
   },
   computed: {
@@ -27,8 +28,8 @@ export default {
     }
   },
   methods: {
-    hit (e) {
-      console.log(e)
+    scrollDown () {
+      window.scroll(0, this.height)
     }
   },
   components: {

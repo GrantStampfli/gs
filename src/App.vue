@@ -36,16 +36,16 @@
           </v-btn>
         </template>
     </v-footer>
-    <login v-on:login="login($event)" :auth="auth"></login>
+    <!-- <login v-on:login="login($event)" :auth="auth"></login> -->
   </v-app>
 </template>
 <script>
-  import Login from '@/pages/account/Login'
+  // import Login from '@/pages/account/Login'
   import {routes} from '@/router'
-  import firebase from 'firebase'
-  import fireConfig from '@/store/firebase'
-  const firebaseApp = firebase.initializeApp(fireConfig)
-  const auth = firebaseApp.auth()
+  // import firebase from 'firebase'
+  // import fireConfig from '@/store/firebase'
+  // const firebaseApp = firebase.initializeApp(fireConfig)
+  // const auth = firebaseApp.auth()
   export default {
     data () {
       return {
@@ -75,13 +75,13 @@
       }
     },
     methods: {
-      login (user) {
-        auth.signInWithEmailAndPassword(user.email, user.password).then((e) => {
-          console.log(e)
-        }).catch(err => {
-          console.log(err)
-        })
-      },
+      // login (user) {
+      //   auth.signInWithEmailAndPassword(user.email, user.password).then((e) => {
+      //     console.log(e)
+      //   }).catch(err => {
+      //     console.log(err)
+      //   })
+      // },
       onResize () {
         const windowSize = { x: window.innerWidth, y: window.innerHeight }
         this.$store.dispatch('setWindowSize', windowSize)
@@ -89,7 +89,7 @@
       }
     },
     components: {
-      'login': Login
+      // 'login': Login
     },
     mounted () {
       this.onResize()

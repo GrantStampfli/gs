@@ -9,10 +9,8 @@ Vue.use(Vuex)
 
 export const store = new Vuex.Store({
   state: {
-    user: {},
     config: {},
     windowSize: {},
-    preferences: {},
     pageHeaderText: 'Loading...'
   },
   actions,

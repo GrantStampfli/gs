@@ -1,5 +1,4 @@
 import Vue from 'vue'
-import VueFire from 'vuefire'
 import Vuetify from 'vuetify'
 import './assets/stylus/main.styl'
 
@@ -11,7 +10,6 @@ import { sync } from 'vuex-router-sync'
 
 sync(store, router)
 
-Vue.use(VueFire)
 Vue.use(Vuetify)
 Vue.use(Globals)
 

@@ -1,5 +1,5 @@
 <template>
-  <v-app v-resize="onResize">
+  <v-app v-resize="onResize" dark>
     <v-navigation-drawer temporary persistent v-model="drawer" enable-resize-watcher app>
       <v-list>
         <v-list-tile v-for="(link, i) in links" :key="i" :to="{name: link.name}">
@@ -31,7 +31,7 @@
       <v-subheader>&copy; 2017 {{title}}. All rights reserved.</v-subheader>
       <v-spacer></v-spacer>
         <template v-for="s in social">
-          <v-btn small light flat icon :key="s.icon" :href="s.link" target="_blank">
+          <v-btn small dark flat icon :key="s.icon" :href="s.link" target="_blank">
             <v-icon>{{s.icon}}</v-icon>
           </v-btn>
         </template>

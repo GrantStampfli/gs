@@ -1,14 +1,20 @@
 <template>
   <v-card flat>
     <intro></intro>
-    <testimonials></testimonials>
     <tech></tech>
+    <quotes></quotes>
+    <v-layout wrap>
+      <v-flex md8 offset-md2>
+        <contact></contact>
+      </v-flex>
+    </v-layout>
   </v-card>
 </template>
 <script>
 import Tech from './components/Tech'
 import Intro from './components/Intro'
-import Testimonials from './components/Testimonials'
+import Quotes from './components/Quotes'
+import Contact from '@/components/Contact'
 export default {
   name: 'Home',
   props: {},
@@ -20,7 +26,8 @@ export default {
   components: {
     'tech': Tech,
     'intro': Intro,
-    'testimonials': Testimonials
+    'quotes': Quotes,
+    'contact': Contact
   }
 }
 </script>

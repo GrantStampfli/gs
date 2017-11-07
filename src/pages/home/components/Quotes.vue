@@ -1,5 +1,5 @@
 <template>
-  <v-container class="home-testimonials">
+  <v-container class="home-quotes">
     <v-card flat color="transparent">
       <v-card-title class="display-1">Testimonials</v-card-title>
       <v-card-text>
@@ -17,7 +17,7 @@
 </template>
 <script>
 export default {
-  name: 'Testimonials',
+  name: 'Quotes',
   props: {},
   data () {
     return {
@@ -47,7 +47,7 @@ export default {
 }
 </script>
 <style lang="stylus">
-  .home-testimonials {
+  .home-quotes {
     .card__title {
       justify-content: center;
       text-transform: uppercase;

@@ -3,7 +3,7 @@
     <v-form v-model="valid" dark>
       <v-text-field label="Name" v-model="name" name="name" :rules="nameRules" :counter="15" required></v-text-field>
       <v-text-field label="E-mail" v-model="email" name="email" type="email" :rules="emailRules" required></v-text-field>
-      <v-text-field label="Message" v-model="message" name="message" multi-line required>
+      <v-text-field label="Message" v-model="message" name="message" multi-line required></v-text-field>
     </v-form>
     <v-snackbar bottom multi-line v-model="snackbar">
       {{ text }}
@@ -27,7 +27,7 @@ export default {
       email: '',
       emailRules: [
         (v) => !!v || 'E-mail is required',
-        (v) => /^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,3})+$/.test(v) || 'E-mail must be valid'
+        (v) => /^\w+([.-]?\w+)*@\w+([.-]?\w+)*(\.\w{2,3})+$/.test(v) || 'E-mail must be valid'
       ],
       message: ''
     }
@@ -39,6 +39,6 @@ export default {
   components: {}
 }
 </script>
-<style lang="scss">
+<style lang="stylus">
 
 </style>

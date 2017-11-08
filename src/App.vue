@@ -30,15 +30,12 @@
     <v-footer app class="pr-3" color="transparent">
       <v-subheader>&copy; 2017 {{title}}. All rights reserved.</v-subheader>
       <v-spacer></v-spacer>
-        <template v-for="s in social">
-          <v-btn small dark flat icon :key="s.icon" :href="s.link" target="_blank">
-            <v-icon>{{s.icon}}</v-icon>
-          </v-btn>
-        </template>
+      <social></social>
     </v-footer>
   </v-app>
 </template>
 <script>
+  import Social from '@/components/Social'
   import {routes} from '@/router'
   export default {
     data () {
@@ -46,20 +43,6 @@
         drawer: false,
         title: 'Vue.js',
         links: routes,
-        social: [
-          {
-            icon: 'fa-twitter',
-            link: 'https://twitter.com/'
-          },
-          {
-            icon: 'fa-linkedin',
-            link: 'https://linkedin.com/'
-          },
-          {
-            icon: 'fa-github',
-            link: 'https://github.com/'
-          }
-        ],
         windowSize: {
           x: 0,
           y: 0
@@ -73,6 +56,9 @@
         this.$store.dispatch('setWindowSize', windowSize)
         this.windowSize = windowSize
       }
+    },
+    components: {
+      'social': Social
     },
     mounted () {
       this.onResize()

@@ -9,11 +9,9 @@
     "logs": "firebase functions:log"
   },
   "dependencies": {
-    "express": "^4.16.2",
     "firebase-admin": "~5.4.2",
     "firebase-functions": "^0.7.1",
-    "jade": "^1.11.0",
-    "mailgun-js": "^0.13.1"
+    "nodemailer": "^4.3.1"
   },
   "private": true
 }

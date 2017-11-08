@@ -56,7 +56,7 @@ export default {
         html: this.messageBody()
       }
       if (!this.valid) {
-        return this.snackbar = {
+        this.snackbar = {
           state: true,
           color: 'warning',
           message: 'Oops.. Fill out all required fields before sending.'

@@ -36,7 +36,7 @@
 </template>
 <script>
 export default {
-  name: 'Tech',
+  name: 'Skills',
   props: {},
   data () {
     return {

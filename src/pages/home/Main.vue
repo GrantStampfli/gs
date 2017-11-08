@@ -1,7 +1,8 @@
 <template>
   <v-card flat>
     <intro></intro>
-    <tech></tech>
+    <summary></summary>
+    <skills></skills>
     <quotes></quotes>
     <v-layout wrap>
       <v-flex md8 offset-md2>
@@ -11,9 +12,10 @@
   </v-card>
 </template>
 <script>
-import Tech from './components/Tech'
 import Intro from './components/Intro'
+import Skills from './components/Skills'
 import Quotes from './components/Quotes'
+import Summary from './components/Summary'
 import Contact from '@/components/Contact'
 export default {
   name: 'Home',
@@ -24,9 +26,10 @@ export default {
   computed: {},
   methods: {},
   components: {
-    'tech': Tech,
     'intro': Intro,
+    'skills': Skills,
     'quotes': Quotes,
+    'summary': Summary,
     'contact': Contact
   }
 }

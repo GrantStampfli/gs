@@ -46,7 +46,7 @@ export default {
   },
   methods: {
     sendContactForm () {
-      const date = Date();
+      const date = Date()
       const data = {
         date: date,
         name: this.name,

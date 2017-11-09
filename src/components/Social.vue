@@ -5,9 +5,9 @@
         <v-icon>{{s.icon}}</v-icon>
       </v-btn>
     </template>
-    <v-speed-dial v-model="speedDial" bottom right absolute direction="top" transition="slide-y-reverse-transition" class="hidden-sm-and-up">
+    <v-speed-dial v-model="speedDial" bottom right absolute direction="top" transition="slide-y-reverse-transition" class="hidden-md-and-up">
       <v-btn v-model="speedDial" slot="activator" flat dark fab small hover>
-        <v-icon>apps</v-icon>
+        <v-icon>share</v-icon>
         <v-icon>close</v-icon>
       </v-btn>
       <template v-for="s in social">

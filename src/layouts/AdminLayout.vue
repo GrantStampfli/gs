@@ -1,9 +1,9 @@
 <template>
-  <router-view></router-view>
+  <v-container></v-container>
 </template>
 <script>
 export default {
-  name: 'App',
+  name: 'AdminLayout',
   props: {},
   data () {
     return {}

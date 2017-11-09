@@ -14,4 +14,4 @@ yarn-error.log*
 *.sln
 *.swp
 
-src/\config\.js
+src/firebase/config\.js

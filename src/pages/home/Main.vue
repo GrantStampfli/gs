@@ -18,7 +18,7 @@ import Quotes from './components/Quotes'
 import Overview from './components/Overview'
 import Contact from '@/components/Contact'
 export default {
-  name: 'Home',
+  name: 'HomeMain',
   props: {},
   data () {
     return {}

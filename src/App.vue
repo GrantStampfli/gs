@@ -18,7 +18,7 @@
       <v-toolbar-items class="hidden-sm-and-down">
         <v-btn flat v-for="(link, i) in links" :key="i" :to="{name: link.name}">{{link.meta.title}}</v-btn>
       </v-toolbar-items>
-      <v-toolbar-side-icon @click.stop="drawer = !drawer" class="hidden-md-and-up"></v-toolbar-side-icon>
+      <v-toolbar-side-icon v-on:click.stop="drawer = !drawer" class="hidden-md-and-up"></v-toolbar-side-icon>
     </v-toolbar>
     <main>
       <v-content>
@@ -27,7 +27,7 @@
         </v-slide-y-transition>
       </v-content>
     </main>
-    <v-footer app class="pr-3" color="transparent">
+    <v-footer app>
       <v-subheader>&copy; 2017 {{title}}. All rights reserved.</v-subheader>
       <v-spacer></v-spacer>
       <social></social>
@@ -35,8 +35,9 @@
   </v-app>
 </template>
 <script>
+  import { routes } from '@/router'
   import Social from '@/components/Social'
-  import {routes} from '@/router'
+
   export default {
     data () {
       return {

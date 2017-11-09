@@ -1,7 +1,7 @@
 <template>
   <v-card flat>
     <intro></intro>
-    <summary></summary>
+    <overview></overview>
     <skills></skills>
     <quotes></quotes>
     <v-layout wrap>
@@ -15,7 +15,7 @@
 import Intro from './components/Intro'
 import Skills from './components/Skills'
 import Quotes from './components/Quotes'
-import Summary from './components/Summary'
+import Overview from './components/Overview'
 import Contact from '@/components/Contact'
 export default {
   name: 'Home',
@@ -29,7 +29,7 @@ export default {
     'intro': Intro,
     'skills': Skills,
     'quotes': Quotes,
-    'summary': Summary,
+    'overview': Overview,
     'contact': Contact
   }
 }

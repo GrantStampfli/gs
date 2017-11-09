@@ -19,6 +19,7 @@
   </v-card>
 </template>
 <script>
+import db from '@/db'
 export default {
   name: 'Contact',
   props: {},
@@ -59,10 +60,11 @@ export default {
         this.snackbar = {
           state: true,
           color: 'warning',
-          message: 'Oops.. Fill out all required fields before sending.'
+          text: 'Fill out all required fields before sending.'
         }
       } else {
-        this.$firebaseRefs.messages.push(data).then(() => this.formSent())
+        this.$firebaseRefs.messages.push(data)
+        this.formSent()
       }
     },
     messageBody () {
@@ -83,12 +85,12 @@ export default {
       this.snackbar = {
         state: true,
         color: 'success',
-        message: 'Thanks for the message! I\'ll be in touch soon'
+        text: 'Thanks for the message! I\'ll be in touch soon'
       }
     }
   },
   firebase: {
-    messages: this.$db.ref('messages')
+    messages: db.ref('messages')
   }
 }
 </script>

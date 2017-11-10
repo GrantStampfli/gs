@@ -35,7 +35,7 @@
   </v-app>
 </template>
 <script>
-  import { routes } from '@/router'
+  import base from '@/router/base'
   import Social from '@/components/Social'
 
   export default {
@@ -44,7 +44,7 @@
       return {
         drawer: false,
         title: 'Vue.js',
-        links: routes.base,
+        links: base.children,
         windowSize: {
           x: 0,
           y: 0

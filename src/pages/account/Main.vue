@@ -21,7 +21,6 @@
 <script>
 export default {
   name: 'AccountMain',
-  props: {},
   data () {
     return {}
   },

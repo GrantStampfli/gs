@@ -13,16 +13,28 @@ export default {
       children: [
         {
           path: '',
+          name: 'account',
+          redirect: 'login'
+        },
+        {
+          path: '/login',
+          redirect: 'login'
+        },
+        {
+          path: 'login',
           name: 'login',
           component: Login,
           meta: {
             title: 'Login',
             icon: 'person'
-          },
-          alias: 'login'
+          }
         },
         {
           path: '/register',
+          redirect: 'register'
+        },
+        {
+          path: 'register',
           name: 'register',
           component: Register,
           meta: {

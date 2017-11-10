@@ -41,15 +41,27 @@
         <v-subheader>Or Sign With</v-subheader>
         <v-divider></v-divider>
       </v-layout>
+      <v-layout justify-center>
+        <template v-for="(val, key, index) in oauth">
+          <v-btn large icon v-on:click="[val.fn]" color="primary" :key="val.key" dark>
+            <v-icon>{{val.icon}}</v-icon>
+          </v-btn>
+        </template>
+      </v-layout>
     </v-card-text>
   </v-card>
 </template>
 <script>
+import { app } from '@/firebase'
 import ForgotPassword from './components/ForgotPassword'
 
 export default {
   name: 'Login',
-  props: {},
+  beforeRouteEnter (to, from, next) {
+    next(vm => {
+      vm.returnPage = from.name
+    })
+  },
   data () {
     return {
       valid: false,
@@ -63,35 +75,40 @@ export default {
       oauth: {
         google: {
           name: 'Google',
-          icon: 'google',
+          icon: 'fa-google',
           fn: this.googleLogin
         },
         github: {
           name: 'Github',
-          icon: 'github',
+          icon: 'fa-github',
           fn: this.githubLogin
         },
         twitter: {
           name: 'Twitter',
-          icon: 'twitter',
+          icon: 'fa-twitter',
           fn: this.twitterLogin
         }
-      }
+      },
+      returnPage: null
     }
   },
   computed: {},
   methods: {
     attemptLogin () {
-      const data = {
-        email: this.loginForm.username,
-        password: this.loginForm.password,
-        rememberMe: this.loginForm.rememberMe
-      }
-      console.log(data)
+      const email = this.loginForm.email
+      const pw = this.loginForm.password
+      app.auth().signInWithEmailAndPassword(email, pw).then(res => {
+        this.$store.dispatch('setUser', res)
+        this.$router.push({
+          name: this.returnPage ? this.returnPage : 'home'
+        })
+      }).catch(err => {
+        console.log(err)
+      })
     },
     googleLogin () {},
     githubLogin () {},
-    twitterLogin () {},
+    twitterLogin () {}
   },
   components: {
     'forgot-password': ForgotPassword
@@ -99,5 +116,4 @@ export default {
 }
 </script>
 <style lang="stylus" scoped>
-
 </style>

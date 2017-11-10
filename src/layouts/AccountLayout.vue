@@ -1,10 +1,8 @@
 <template>
   <v-app class="white login-layout">
-    <v-toolbar class="accent elevation-4" fixed app>
+    <v-toolbar dark flat class="transparent" fixed app>
       <v-spacer></v-spacer>
-      <v-toolbar-title>
-        LOGIN
-      </v-toolbar-title>
+      <v-toolbar-title v-text="title"></v-toolbar-title>
       <v-spacer></v-spacer>
     </v-toolbar>
 
@@ -22,7 +20,9 @@ export default {
   name: 'LoginLayout',
   props: {},
   data () {
-    return {}
+    return {
+      title: ''
+    }
   },
   computed: {},
   methods: {},

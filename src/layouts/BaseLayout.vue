@@ -2,7 +2,7 @@
   <v-app v-resize="onResize" dark>
     <v-navigation-drawer temporary persistent v-model="drawer" enable-resize-watcher app>
       <v-list>
-        <v-list-tile v-for="(link, i) in links" :key="i" :to="{name: link.name}">
+        <v-list-tile v-for="(link, i) in links" v-if="!link.meta.hidden" :key="i" :to="{name: link.name}">
           <v-list-tile-action>
             <v-icon v-html="link.meta.icon"></v-icon>
           </v-list-tile-action>
@@ -16,7 +16,7 @@
       <v-toolbar-title v-text="title"></v-toolbar-title>
       <v-spacer></v-spacer>
       <v-toolbar-items class="hidden-sm-and-down">
-        <v-btn flat v-for="(link, i) in links" :key="i" :to="{name: link.name}">{{link.meta.title}}</v-btn>
+        <v-btn flat v-for="(link, i) in links" :key="i" :to="{name: link.name}">{{ link.meta.title }}</v-btn>
       </v-toolbar-items>
       <v-toolbar-side-icon v-on:click.stop="drawer = !drawer" class="hidden-md-and-up"></v-toolbar-side-icon>
     </v-toolbar>
@@ -28,7 +28,7 @@
       </v-content>
     </main>
     <v-footer app>
-      <v-subheader>&copy; 2017 {{title}}. All rights reserved.</v-subheader>
+      <v-subheader>&copy; 2017 {{ title }}. All rights reserved.</v-subheader>
       <v-spacer></v-spacer>
       <social></social>
     </v-footer>

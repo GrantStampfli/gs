@@ -29,7 +29,10 @@ export default {
     {
       path: '*',
       name: 'default',
-      component: Home
+      component: Home,
+      meta: {
+        hidden: true
+      }
     }
   ]
 }

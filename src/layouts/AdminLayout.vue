@@ -1,6 +1,19 @@
 <template>
   <v-app dark>
-    <v-navigation-drawer persistent v-model="drawer" enable-resize-watcher app>
+    <v-navigation-drawer persistent v-model="drawer" clipped enable-resize-watcher app>
+      <v-toolbar flat class="darken-3">
+        <v-list class="pa-0">
+          <v-list-tile avatar>
+            <v-list-tile-avatar>
+              <img v-if="user.photoURL" :src="user.photoURL" />
+              <v-icon v-else>account_circle</v-icon>
+            </v-list-tile-avatar>
+            <v-list-tile-content>
+              <v-list-tile-title>{{user.email}}</v-list-tile-title>
+            </v-list-tile-content>
+          </v-list-tile>
+        </v-list>
+      </v-toolbar>
       <v-list dense>
         <v-list-tile>
           <v-list-tile-action>
@@ -58,7 +71,11 @@ export default {
       drawer: false
     }
   },
-  computed: {},
+  computed: {
+    user () {
+      return this.$store.getters.user
+    }
+  },
   methods: {},
   components: {}
 }

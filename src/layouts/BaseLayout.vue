@@ -16,7 +16,7 @@
       <v-toolbar-title v-text="title"></v-toolbar-title>
       <v-spacer></v-spacer>
       <v-toolbar-items class="hidden-sm-and-down">
-        <v-btn flat v-for="(link, i) in links" :key="i" :to="{name: link.name}">{{ link.meta.title }}</v-btn>
+        <v-btn flat v-for="(link, i) in links" v-if="!link.meta.hidden" :key="i" :to="{name: link.name}" exact>{{ link.meta.title }}</v-btn>
       </v-toolbar-items>
       <v-toolbar-side-icon v-on:click.stop="drawer = !drawer" class="hidden-md-and-up"></v-toolbar-side-icon>
     </v-toolbar>

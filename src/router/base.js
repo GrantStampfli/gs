@@ -25,6 +25,14 @@ export default {
         title: 'About',
         icon: 'bubble_chart'
       }
+    },
+    {
+      path: '*',
+      name: 'default',
+      component: Home,
+      meta: {
+        hidden: true
+      }
     }
   ]
 }

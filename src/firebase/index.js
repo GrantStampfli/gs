@@ -12,4 +12,13 @@ const posts = db.ref('posts')
 const media = db.ref('media')
 const users = db.ref('users')
 
-export { db, messages, settings, pages, posts, media, users }
+export {
+  app,
+  db,
+  messages,
+  settings,
+  pages,
+  posts,
+  media,
+  users
+}

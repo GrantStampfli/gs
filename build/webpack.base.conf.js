@@ -24,6 +24,8 @@ module.exports = {
     alias: {
       'vue$': 'vue/dist/vue.esm.js',
       '@': resolve('src'),
+      'variables': resolve('src/assets/stylus/variables'),
+      'flexbox': resolve('src/assets/stylus/mixins/flexbox'),
     },
     symlinks: false
   },

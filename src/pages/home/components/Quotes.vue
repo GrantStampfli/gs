@@ -53,7 +53,7 @@ export default {
       text-transform: uppercase;
     }
     .quote-carousel {
-      height: 100px;
+      height: auto;
       margin-top: 1rem;
     }
     .quote {

@@ -1,6 +1,6 @@
 <template>
   <v-app dark>
-    <v-navigation-drawer persistent v-model="drawer" clipped enable-resize-watcher app>
+    <v-navigation-drawer fixed v-model="drawer" clipped app>
       <v-toolbar flat class="darken-3">
         <v-list class="pa-0">
           <v-list-tile avatar>
@@ -37,15 +37,11 @@
       <v-toolbar-side-icon v-on:click.stop="drawer = !drawer"></v-toolbar-side-icon>
       <v-toolbar-title>Application</v-toolbar-title>
     </v-toolbar>
-    <main>
-      <v-content>
-        <v-container fluid fill-height>
-          <v-layout justify-center align-center>
-            
-          </v-layout>
-        </v-container>
-      </v-content>
-    </main>
+    <v-content>
+      <v-slide-y-transition mode="out-in">
+        <router-view></router-view>
+      </v-slide-y-transition>
+    </v-content>
     <v-footer app fixed>
       <span>&copy; 2017</span>
     </v-footer>

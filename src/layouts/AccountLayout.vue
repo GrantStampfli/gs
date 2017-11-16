@@ -5,14 +5,11 @@
       <v-toolbar-title v-text="title"></v-toolbar-title>
       <v-spacer></v-spacer>
     </v-toolbar>
-
-    <main>
-      <v-content>
-        <transition name="slide" mode="out-in">
-          <router-view></router-view>
-        </transition>
-      </v-content>
-    </main>
+    <v-content>
+      <transition name="slide" mode="out-in">
+        <router-view></router-view>
+      </transition>
+    </v-content>
   </v-app>
 </template>
 <script>

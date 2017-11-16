@@ -1,6 +1,6 @@
 <template>
   <v-card flat class="home-intro">
-    <v-parallax jumbotron :height="height" :src="image">
+    <v-parallax :height="height" :src="image">
       <particles></particles>
       <v-layout column align-center justify-center>
         <h1 class="home-title">{{title}}</h1>

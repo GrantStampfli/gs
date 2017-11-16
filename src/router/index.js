@@ -13,5 +13,14 @@ export const router = new Router({
     account,
     admin,
     base
-  ]
+  ],
+  scrollBehavior (to, from, savedPosition) {
+    if (savedPosition) {
+      return savedPosition
+    } else if (from.path === to.path) {
+      // don't rescroll, this is a query change (or something similar)
+    } else {
+      return { x: 0, y: 0 }
+    }
+  }
 })

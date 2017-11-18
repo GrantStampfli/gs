@@ -1,5 +1,5 @@
 <template>
-  <v-card flat class="home-intro">
+  <section class="home-intro">
     <v-parallax :height="height" :src="image">
       <particles></particles>
       <v-layout column align-center justify-center>
@@ -8,7 +8,7 @@
       </v-layout>
       <v-btn class="go-down" icon dark large v-on:click="scrollDown()"><v-icon x-large>keyboard_arrow_down</v-icon></v-btn>
     </v-parallax>
-  </v-card>
+  </section>
 </template>
 <script>
 import Particles from '@/components/Particles'

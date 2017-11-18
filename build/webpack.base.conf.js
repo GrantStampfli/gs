@@ -1,5 +1,4 @@
 var path = require('path')
-var fs = require('fs')
 var utils = require('./utils')
 var config = require('../config')
 var vueLoaderConfig = require('./vue-loader.conf')
@@ -10,7 +9,7 @@ function resolve (dir) {
 
 module.exports = {
   entry: {
-    app: './src/main.js'
+    app: ['babel-polyfill','./src/main.js']
   },
   output: {
     path: config.build.assetsRoot,
@@ -26,9 +25,8 @@ module.exports = {
       '@': resolve('src'),
       'node_modules': resolve('node_modules'),
       'variables': resolve('src/assets/stylus/variables'),
-      'flexbox': resolve('src/assets/stylus/mixins/flexbox'),
-    },
-    symlinks: false
+      'flexbox': resolve('src/assets/stylus/mixins/flexbox')
+    }
   },
   module: {
     rules: [
@@ -49,7 +47,7 @@ module.exports = {
       {
         test: /\.js$/,
         loader: 'babel-loader',
-        exclude: /node_modules/
+        include: [resolve('src'), resolve('test')]
       },
       {
         test: /\.(png|jpe?g|gif|svg)(\?.*)?$/,

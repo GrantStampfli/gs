@@ -15,3 +15,5 @@ yarn-error.log*
 *.swp
 
 src/firebase/config\.js
+
+pwa/*

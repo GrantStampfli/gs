@@ -17,6 +17,7 @@
       <v-spacer></v-spacer>
       <v-toolbar-items class="hidden-sm-and-down">
         <v-btn flat v-for="(link, i) in links" v-if="!link.meta.hidden" :key="i" :to="{name: link.name}" exact>{{ link.meta.title }}</v-btn>
+        <v-btn flat :to="{name: 'login'}" exact>{{ accountStatus() }}</v-btn>
       </v-toolbar-items>
       <v-toolbar-side-icon v-on:click.stop="drawer = !drawer" class="hidden-md-and-up"></v-toolbar-side-icon>
     </v-toolbar>
@@ -55,7 +56,8 @@
         const windowSize = { x: window.innerWidth, y: window.innerHeight }
         this.$store.dispatch('setWindowSize', windowSize)
         this.windowSize = windowSize
-      }
+      },
+      accountStatus: () => 'Login'
     },
     components: {
       'social': Social

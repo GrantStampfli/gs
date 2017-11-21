@@ -11,7 +11,7 @@
         <v-icon>close</v-icon>
       </v-btn>
       <template v-for="s in social">
-        <v-btn small dark fab :key="s.icon" :href="s.link" target="_blank">
+        <v-btn small dark fab :key="s.icon" :href="s.link" target="_blank" >
           <v-icon>{{s.icon}}</v-icon>
         </v-btn>
       </template>

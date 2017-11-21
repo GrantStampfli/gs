@@ -17,3 +17,4 @@ yarn-error.log*
 src/firebase/config\.js
 
 pwa/*
+static/img/*

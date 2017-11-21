@@ -69,7 +69,7 @@
       </v-layout>
     </section>
     <section>
-      <v-parallax src="https://images.unsplash.com/photo-1502716332773-a02100694c66?auto=format&fit=crop&w=2500&q=60&ixid=dW5zcGxhc2guY29tOzs7Ozs%3D" height="350">
+      <v-parallax src="https://images.unsplash.com/photo-1495707303799-07aa5b33494c?auto=format&fit=crop&w=1353&q=60&ixid=dW5zcGxhc2guY29tOzs7Ozs%3D" height="350">
         <v-layout column align-center justify-center>
           <div class="headline white--text mb-3 text-xs-center">Web development has never been easier</div>
           <em>Kick-start your application today</em>

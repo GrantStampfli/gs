@@ -11,6 +11,7 @@ export const store = new Vuex.Store({
   state: {
     user: {},
     config: {},
+    ready: null,
     windowSize: {},
     pageHeaderText: 'Loading...'
   },

@@ -1,7 +1,6 @@
 export default {
   setUser (context, usr) {
     const user = {
-      uid: usr.uid,
       email: usr.email,
       photoURL: usr.photoURL,
       displayName: usr.displayName,

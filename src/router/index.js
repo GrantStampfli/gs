@@ -5,6 +5,8 @@ import account from './account'
 import admin from './admin'
 import base from './base'
 
+import { store } from '@/store'
+
 Vue.use(Router)
 
 export const router = new Router({
@@ -23,4 +25,11 @@ export const router = new Router({
       return { x: 0, y: 0 }
     }
   }
+})
+
+router.beforeEach((to, from, next) => {
+  store.commit('init')
+  store.getters.ready.then(() => {
+    next()
+  })
 })

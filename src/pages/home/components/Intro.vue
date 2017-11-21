@@ -3,8 +3,8 @@
     <v-parallax :height="height" :src="image">
       <particles></particles>
       <v-layout column align-center justify-center>
-        <h1 class="home-title">{{title}}</h1>
-        <h4 class="home-sub-title">{{subTitle}}</h4>
+        <h1 class="home-title display-3">{{title}}</h1>
+        <h4 class="home-sub-title display-1">{{subTitle}}</h4>
       </v-layout>
       <v-btn class="go-down" icon dark large v-on:click="scrollDown()"><v-icon x-large>keyboard_arrow_down</v-icon></v-btn>
     </v-parallax>

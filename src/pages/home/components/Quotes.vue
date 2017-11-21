@@ -54,9 +54,12 @@ export default {
     }
     .quote-carousel {
       height: auto;
+
       margin-top: 1rem;
     }
     .quote {
+      height: 100%;
+      min-height: 3rem;
       .quote-content {
         .title {
           text-align: right;

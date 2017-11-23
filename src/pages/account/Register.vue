@@ -47,6 +47,7 @@
   </v-card>
 </template>
 <script>
+import { app } from '@/firebase'
 export default {
   name: 'Register',
   beforeRouteEnter (to, from, next) {
@@ -69,7 +70,11 @@ export default {
   },
   computed: {},
   methods: {
-    register () {},
+    register () {
+      const form = this.registerForm
+      console.log(app)
+      console.log(form)
+    },
     resetForm () {
       this.registerForm = {
         name: '',

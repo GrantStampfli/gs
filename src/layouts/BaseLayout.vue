@@ -17,7 +17,20 @@
       <v-spacer></v-spacer>
       <v-toolbar-items class="hidden-sm-and-down">
         <v-btn flat v-for="(link, i) in links" v-if="!link.meta.hidden" :key="i" :to="{name: link.name}" exact>{{ link.meta.title }}</v-btn>
-        <v-btn flat :to="{name: 'login'}" exact>{{ accountStatus() }}</v-btn>
+        <v-menu v-if="userName" offset-y>
+          <v-btn flat exact slot="activator">
+            <v-avatar>
+              <img v-if="user.photoURL" :src="user.photoURL">
+              <v-icon v-else dark>account_circle</v-icon>
+            </v-avatar>
+          </v-btn>
+          <v-list dense>
+            <v-list-tile v-on:click="$signOut()">
+              <v-list-tile-title>Sign Out</v-list-tile-title>
+            </v-list-tile>
+          </v-list>
+        </v-menu>
+        <v-btn flat v-else :to="{name: 'login'}" exact>Login</v-btn>
       </v-toolbar-items>
       <v-toolbar-side-icon v-on:click.stop="drawer = !drawer" class="hidden-md-and-up"></v-toolbar-side-icon>
     </v-toolbar>
@@ -34,41 +47,54 @@
   </v-app>
 </template>
 <script>
-  import base from '@/router/base'
-  import Social from '@/components/Social'
+import base from '@/router/base'
+import Social from '@/components/Social'
 
-  export default {
-    name: 'BaseLayout',
-    data () {
-      return {
-        drawer: false,
-        title: 'Vue.js',
-        links: base.children,
-        windowSize: {
-          x: 0,
-          y: 0
-        },
-        scroll: 0
-      }
-    },
-    methods: {
-      onResize () {
-        const windowSize = { x: window.innerWidth, y: window.innerHeight }
-        this.$store.dispatch('setWindowSize', windowSize)
-        this.windowSize = windowSize
+export default {
+  name: 'BaseLayout',
+  data () {
+    return {
+      drawer: false,
+      title: 'Vue.js',
+      links: base.children,
+      windowSize: {
+        x: 0,
+        y: 0
       },
-      accountStatus: () => 'Login'
-    },
-    components: {
-      'social': Social
-    },
-    mounted () {
-      this.onResize()
-      window.addEventListener('scroll', (e) => {
-        this.scroll = document.documentElement.scrollTop
-      })
+      scroll: 0
     }
+  },
+  computed: {
+    user () {
+      return this.$store.getters.user
+    },
+    userName () {
+      const user = this.user
+      if (user) {
+        return user.displayName ? user.displayName : user.email
+      } else {
+        return null
+      }
+    }
+  },
+  methods: {
+    onResize () {
+      const windowSize = { x: window.innerWidth, y: window.innerHeight }
+      this.$store.dispatch('setWindowSize', windowSize)
+      this.windowSize = windowSize
+    },
+    accountStatus: () => 'Login'
+  },
+  components: {
+    'social': Social
+  },
+  mounted () {
+    this.onResize()
+    window.addEventListener('scroll', (e) => {
+      this.scroll = document.documentElement.scrollTop
+    })
   }
+}
 </script>
 <style lang="stylus" scoped>
 </style>

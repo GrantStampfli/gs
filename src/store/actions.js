@@ -12,6 +12,9 @@ export default {
     }
     context.commit('setUser', user)
   },
+  signOut (context) {
+    context.commit('setUser', {})
+  },
   setWindowSize (context, obj) {
     context.commit('setWindowSize', obj)
   }

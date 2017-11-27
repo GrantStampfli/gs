@@ -154,6 +154,13 @@ export default {
   },
   components: {
     'forgot-password': ForgotPassword
+  },
+  mounted () {
+    app.auth().onAuthStateChanged(user => {
+      if (user) {
+        this.resolveLogin(user)
+      }
+    })
   }
 }
 </script>

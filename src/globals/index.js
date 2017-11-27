@@ -1,11 +1,15 @@
-
+import { store } from '@/store'
 import { app } from '@/firebase'
 import filters from './filters'
 import directives from './directives'
 
 export const Global = {
   install (Vue) {
-    Vue.prototype.$signOut = () => app.auth().signOut()
+    Vue.prototype.$signOut = () => app.auth().signOut().then(res => {
+      store.dispatch('signOut')
+    }).catch(err => {
+      console.warn(err)
+    })
 
     Vue.prototype.$selectEntireTextbox = (event) => {
       event.target.select()

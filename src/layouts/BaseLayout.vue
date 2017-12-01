@@ -82,8 +82,7 @@ export default {
       const windowSize = { x: window.innerWidth, y: window.innerHeight }
       this.$store.dispatch('setWindowSize', windowSize)
       this.windowSize = windowSize
-    },
-    accountStatus: () => 'Login'
+    }
   },
   components: {
     'social': Social

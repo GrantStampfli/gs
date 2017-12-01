@@ -1,6 +1,6 @@
 <template>
   <section class="home-intro">
-    <v-parallax :height="height" :src="image">
+    <v-parallax :height="height" :src="image" jumbotron>
       <particles></particles>
       <v-layout column align-center justify-center>
         <h1 class="home-title display-3">{{title}}</h1>
